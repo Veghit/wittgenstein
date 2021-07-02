@@ -124,7 +124,7 @@ class Ruleset:
             covered = self.rules[0].covers(df).copy()
             for rule in self.rules[1:]:
                 covered = covered.append(rule.covers(df))
-            covered = covered.drop_duplicates()
+            # todo IS THIS A BUG??
             return covered
 
     def num_covered(self, df):
